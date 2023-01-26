@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FormController extends Controller
 {
@@ -10,6 +11,8 @@ class FormController extends Controller
         return view('form');
     }
     public function submitForm(Request $request) {
-        return $request->all();
+        // return $request->all();
+
+        Storage::disk('public')->append('data.json', json_encode($request->all()));
     }
 }
