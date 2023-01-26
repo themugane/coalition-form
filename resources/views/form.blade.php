@@ -10,18 +10,19 @@
 <body>
 
     <div class="container">
-        <form>
+        <form action="{{ route('coalition_form') }}" method="post">
+            @csrf
             <div class="mb-3">
                 <label for="product_name" class="form-label">Product Name</label>
-                <input type="text" class="form-control" id="product_name" aria-describedby="ProductName">
+                <input type="text" class="form-control" id="product_name" name="product_name" aria-describedby="ProductName">
             </div>
             <div class="mb-3">
                 <label for="quantity_in_stock" class="form-label">Quantity in stock</label>
-                <input type="number" class="form-control" id="quantity_in_stock" aria-describedby="QuantityInStock">
+                <input type="number" class="form-control" id="quantity_in_stock" name="quantity_in_stock" aria-describedby="QuantityInStock">
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price per Item</label>
-                <input type="number" class="form-control" id="price" aria-describedby="PricePerItem">
+                <input type="number" class="form-control" id="price" name="price" aria-describedby="PricePerItem">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

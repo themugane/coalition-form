@@ -15,3 +15,4 @@ use App\Http\Controllers\FormController;
 */
 
 Route::get("/", [FormController::class, 'index'])->name('coalition_form');
+Route::post("/", [FormController::class, 'submitForm']);
