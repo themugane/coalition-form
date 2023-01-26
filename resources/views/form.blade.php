@@ -25,7 +25,36 @@
                 <input type="number" class="form-control" id="price" name="price" aria-describedby="PricePerItem">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </form><br>
+
+        @if (true)
+            <h3>Recorded Items</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Quantity In Stock</th>
+                    <th scope="col">Price per item</th>
+                    <th scope="col">DateTime Submited</th>
+                    <th scope="col">Total Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @foreach ($data as $count => $data_item)
+                        <tr>
+                            <th scope="row">{{ $count += 1 }}</th>
+                            <td>{{ $data_item->product_name ?? '' }}</td>
+                            <td>{{ $data_item->quantity_in_stock ?? '' }}</td>
+                            <td>{{ $data_item->price ?? '' }}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
+        @endif
     </div>
     
 </body>
