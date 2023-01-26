@@ -21,7 +21,7 @@
                 <input type="number" class="form-control" id="quantity_in_stock" name="quantity_in_stock" aria-describedby="QuantityInStock">
             </div>
             <div class="mb-3">
-                <label for="price" class="form-label">Price per Item</label>
+                <label for="price" class="form-label">Price per Item(USD)</label>
                 <input type="number" class="form-control" id="price" name="price" aria-describedby="PricePerItem">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -46,9 +46,9 @@
                             <th scope="row">{{ $count += 1 }}</th>
                             <td>{{ $data_item->product_name ?? '' }}</td>
                             <td>{{ $data_item->quantity_in_stock ?? '' }}</td>
-                            <td>{{ $data_item->price ?? '' }}</td>
-                            <td></td>
-                            <td></td>
+                            <td>${{ $data_item->price ?? '' }}</td>
+                            <td>{{ date('d-M-Y H:i:a', strtotime($data_item->date_submited)) ?? '' }}</td>
+                            <td>${{ number_format($data_item->total_value, 2) ?? '' }}</td>
                         </tr>
                     @endforeach
 

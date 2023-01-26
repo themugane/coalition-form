@@ -19,7 +19,14 @@ class FormController extends Controller
         return view('form', ["data" => $data]);
     }
     public function submitForm(Request $request) {
-        Storage::disk('public')->append('data.json', json_encode($request->all()));
+        $submit_data = [
+            'product_name' => $request->product_name,
+            'quantity_in_stock' => $request->quantity_in_stock,
+            'price' => $request->price,
+            'total_value' => $request->quantity_in_stock * $request->price ?? '',
+            'date_submited' => now()
+        ];
+        Storage::disk('public')->append('data.json', json_encode($submit_data));
         return back()->with('message', "Item Added Succesfully.");
     }
 }
