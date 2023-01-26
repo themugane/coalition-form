@@ -5,10 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coalition Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
 
-    The actual form
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="product_name" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="product_name" aria-describedby="ProductName">
+            </div>
+            <div class="mb-3">
+                <label for="quantity_in_stock" class="form-label">Quantity in stock</label>
+                <input type="number" class="form-control" id="quantity_in_stock" aria-describedby="QuantityInStock">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price per Item</label>
+                <input type="number" class="form-control" id="price" aria-describedby="PricePerItem">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
     
 </body>
 </html>
